@@ -9,9 +9,6 @@ import {
 } from "@chakra-ui/react";
 import { IoMoon } from "react-icons/io5";
 import { LuSun } from "react-icons/lu";
-import { FaReact } from "react-icons/fa";
-import { SiGo } from "react-icons/si";
-import { TbMathSymbols } from "react-icons/tb";
 
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -26,28 +23,14 @@ export default function Navbar() {
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           {/* LEFT SIDE */}
-          <Flex
-            justifyContent={"center"}
-            alignItems={"center"}
-            gap={3}
-            display={{ base: "none", sm: "flex" }}
-          >
-            <FaReact size={30} />
-            <Text fontSize={"2xl"}>+</Text>
-            <SiGo size={30} />
-            <Text fontSize={"2xl"}>=</Text>
-            <TbMathSymbols size={30} />
-          </Flex>
+          <Text fontSize={"2xl"} fontWeight={"bold"}>
+            DailyTasksManager
+          </Text>
 
           {/* RIGHT SIDE */}
-          <Flex alignItems={"center"} gap={3}>
-            <Text fontSize={"lg"} fontWeight={500}>
-              Daily Tasks
-            </Text>
-            <Button onClick={toggleColorMode}>
-              {colorMode === "light" ? <IoMoon /> : <LuSun size={20} />}
-            </Button>
-          </Flex>
+          <Button onClick={toggleColorMode}>
+            {colorMode === "light" ? <IoMoon /> : <LuSun size={20} />}
+          </Button>
         </Flex>
       </Box>
     </Container>
