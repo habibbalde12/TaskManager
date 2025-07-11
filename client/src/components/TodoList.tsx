@@ -1,4 +1,4 @@
-import { Flex, Spinner, Stack, Text } from "@chakra-ui/react";
+import { Flex, Spinner, Stack, Text, useColorModeValue } from "@chakra-ui/react";
 
 import TodoItem from "./TodoItem";
 import { useQuery } from "@tanstack/react-query";
@@ -28,6 +28,9 @@ const TodoList = () => {
 		},
 	});
 
+	const completedTextColor = useColorModeValue("blue.600", "blue.300");
+
+
 	return (
 		<>
 			<Text
@@ -48,7 +51,7 @@ const TodoList = () => {
 			)}
 			{!isLoading && todos?.length === 0 && (
 				<Stack alignItems={"center"} gap='3'>
-					<Text fontSize={"xl"} textAlign={"center"} color={"gray.500"}>
+					<Text fontSize={"xl"} textAlign={"center"} color={completedTextColor}>
 						All tasks completed! 🤞
 					</Text>
 				</Stack>
