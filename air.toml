@@ -1,0 +1,14 @@
+# Root and temp directories
+root = "."
+tmp_dir = "tmp"
+
+[build]
+  bin = "main"
+  cmd = "go build -o main main.go"
+  include_ext = ["go"]
+  exclude_dir = ["tmp", "client", "node_modules"]
+  follow_symlink = true
+  delay = 1000
+
+[log]
+  time = true
